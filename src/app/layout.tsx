@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
-import { inter } from './ui/fonts';
+import { inter } from './ui/fonts'
+import '@/app/globals.css';
 
 export const metadata: Metadata = {
   title: 'ACME'
@@ -15,4 +16,4 @@ export default function RootLayout({children}: {children: React.ReactNode}
       </body>
     </html>
   );
-}
+};
