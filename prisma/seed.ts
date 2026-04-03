@@ -23,15 +23,15 @@ async function main() {
     const customer_data = [{
         name: 'Joana Nogueira',
         email: 'joana@email.com',
-        imageUrl: 'https://ui-avatars.com/api/?nome=Joana+Nogueira&background=random',
+        imageUrl: 'https://ui-avatars.com/api/?name=Joana+Nogueira&background=random',
     }, {
         name: 'Beatriz Nogueira',
         email: 'beatriz@email.com',
-        imageUrl: 'https://ui-avatars.com/api/?nome=Beatriz+Nogueira&background=random',
+        imageUrl: 'https://ui-avatars.com/api/?name=Beatriz+Nogueira&background=random',
     }, {
         name: 'Safira Nogueira',
         email: 'safira@email.com',
-        imageUrl: 'https://ui-avatars.com/api/?nome=Safira+Nogueira&background=random',
+        imageUrl: 'https://ui-avatars.com/api/?name=Safira+Nogueira&background=random',
     }];
 
     const customers = [];
