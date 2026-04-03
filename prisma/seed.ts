@@ -52,52 +52,52 @@ async function main() {
         {
             amount: 15785,
             status: InvoiceStatus.PENDENTE,
-            date: '2026-15-05',
+            date: '2026-05-15',
             customer: customers[0]
         }, {
             amount: 15566,
             status: InvoiceStatus.PAGO,
-            date: '2026-09-05',
+            date: '2026-05-09',
             customer: customers[1]
         }, {
             amount: 18464,
             status: InvoiceStatus.PENDENTE,
-            date: '2026-07-05',
+            date: '2026-05-07',
             customer: customers[2]
         }, {
             amount: 14455,
             status: InvoiceStatus.PENDENTE,
-            date: '2026-31-05',
+            date: '2026-05-31',
             customer: customers[0]
         }, {
             amount: 238764,
             status: InvoiceStatus.PAGO,
-            date: '2026-04-05',
+            date: '2026-05-04',
             customer: customers[1]
         }, {
             amount: 89826,
             status: InvoiceStatus.PENDENTE,
-            date: '2026-02-05',
+            date: '2026-05-02',
             customer: customers[2]
         }, {
             amount: 45698,
             status: InvoiceStatus.PENDENTE,
-            date: '2026-16-05',
+            date: '2026-05-16',
             customer: customers[0]
         }, {
             amount: 85214,
             status: InvoiceStatus.PAGO,
-            date: '2026-11-05',
+            date: '2026-05-11',
             customer: customers[1]
         }, {
             amount: 7412356,
             status: InvoiceStatus.PENDENTE,
-            date: '2026-13-05',
+            date: '2026-05-13',
             customer: customers[2]
         }, {
             amount: 965874,
             status: InvoiceStatus.PAGO,
-            date: '2026-24-05',
+            date: '2026-05-24',
             customer: customers[0]
         }
     ];
