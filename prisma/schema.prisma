@@ -39,15 +39,15 @@ model Customer{
 
 model Invoice {
   id String @id @default(uuid())
-  amont Int 
+  amount Int 
   status InvoiceStatus
   date DateTime
 
   customerId String @map("customer_id")
   customer Customer @relation(fields: [customerId], references: [id])
 
-  createAt DateTime @default(now()) @map("create_at")
-  update DateTime @updatedAt @map("update_at")
+ createdAt DateTime @default(now()) @map("create_at")
+ updatedAt DateTime @updatedAt @map("update_at")
 
   @@index([customerId])
 
