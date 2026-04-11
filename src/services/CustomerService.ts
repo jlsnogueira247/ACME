@@ -22,7 +22,7 @@ async function FindAllCustomers(params: FindAllParams = {}): Promise<Customer[]>
     return customers;
 };
 
-export async function findCustomerById(id: string): Promise<Customer> {
+export async function findCustomerById(id: string): Promise<Customer | null> {
     const customer = await prisma.customer.findUnique({
         where : { id }
     });
