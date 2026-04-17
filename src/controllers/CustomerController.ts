@@ -45,7 +45,7 @@ export const CustomerController = {
     const sortBy = searchParams.get('sortBy') ?? 'name';
     const order = (searchParams.get('order') as SortOrder) ?? 'asc';
 
-    const customers = await findAllCustomers({
+    const result = await findAllCustomers({
       search,
       page,
       limit,
@@ -53,7 +53,7 @@ export const CustomerController = {
       order
     });
 
-    return { status: 200, body: customers };
+    return { status: 200, body: result };
   },
 
   async getById(id: string) {
