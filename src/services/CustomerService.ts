@@ -1,45 +1,51 @@
+
 import prisma from '@/lib/prisma';
 import { Customer, CreateCustomerData, UpdateCustomerData } from '@/types';
-
+ 
 interface FindAllParams {
-    search?: string,
+    search?: string;
+    page?: number;
+    limit?: number;
+    sortBy?: string;
+    order?: 'asc' | 'desc';
 };
-
-async function FindAllCustomers(params: FindAllParams = {}): Promise<Customer[]> {
-    
-    const { search } = params;
-
+ 
+export async function findAllCustomers(params: FindAllParams = {}): Promise<Customer[]> {
+    const { search, page = 1, limit = 10, sortBy = 'name', order = 'asc' } = params;
+ 
     const customers = await prisma.customer.findMany({
         where: search ? {
             OR: [
-                {name : { contains: search, mode: 'insensitive'}},
-                {email : { contains: search, mode: 'insensitive'}},
-            ] 
-        }: undefined,
-        orderBy: { name: 'asc'}
+                { name: { contains: search, mode: 'insensitive' } },
+                { email: { contains: search, mode: 'insensitive' } },
+            ]
+        } : undefined,
+        orderBy: { [sortBy]: order },
+        skip: (page - 1) * limit,
+        take: limit,
     });
-
+ 
     return customers;
 };
-
+ 
 export async function findCustomerById(id: string): Promise<Customer | null> {
     const customer = await prisma.customer.findUnique({
-        where : { id }
+        where: { id }
     });
-
+ 
     return customer;
 };
-
+ 
 export async function createCustomer(
     data: CreateCustomerData
 ): Promise<Customer> {
     const customer = await prisma.customer.create({
         data
     });
-
+ 
     return customer;
 };
-
+ 
 export async function updateCustomer(
     id: string,
     data: UpdateCustomerData
@@ -48,10 +54,10 @@ export async function updateCustomer(
         where: { id },
         data
     });
-
+ 
     return customer;
 };
-
+ 
 export async function deleteCustomer(
     id: string,
 ): Promise<void> {
@@ -59,3 +65,4 @@ export async function deleteCustomer(
         where: { id }
     });
 };
+ 
