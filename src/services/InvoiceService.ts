@@ -60,7 +60,7 @@ export async function findAllInvoices(
             limit: safeLimit,
             totalPages,
             hasMore: safePage < totalPages
-        };
+        }
     };
 
 };
