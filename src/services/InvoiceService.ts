@@ -31,7 +31,7 @@ export async function findAllInvoices(
         }
     } : undefined;
 
-    const [Invoices, total] = await Promise.all([
+    const [invoices, total] = await Promise.all([
         prisma.invoice.findMany({
             where,
             include: {
