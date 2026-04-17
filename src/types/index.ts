@@ -36,7 +36,8 @@ export interface Invoice {
   amount: number;
   date: Date;
   status: InvoiceStatus;
-  customer?: {
+  customer?: 
+  {
     name: string;
     email: string;
     imageUrl: string;
