@@ -14,5 +14,5 @@ export async function POST(request: NextRequest) {
 
   const result = await CustomerController.create(body);
 
-  return NextResponse.json(result.body, { status: result.status });
+  return NextResponse.json(result.body, {status: result.status});
 };
