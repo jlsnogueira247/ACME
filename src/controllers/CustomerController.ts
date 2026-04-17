@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import {
-  FindAllCustomers,
+  findAllCustomers,
   findCustomerById,
   createCustomer,
   updateCustomer,
