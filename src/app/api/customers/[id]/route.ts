@@ -28,5 +28,5 @@ export async function DELETE(request: NextRequest, { params }: RouteParams) {
 
   const result = await CustomerController.remove(id);
 
-  return NextResponse.json(result.body, { status: result.status });
+  return NextResponse.json(result.body, {status: result.status});
 };
