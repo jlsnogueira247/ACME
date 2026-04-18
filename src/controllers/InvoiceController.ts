@@ -4,10 +4,11 @@ import {
   findInvoiceById,
   createInvoice,
   updateInvoice,
-  deleteInvoice
+  deleteInvoice,
+  getInvoiceStats
 
 } from '@/services/InvoiceService';
-import { ApiError, SortOrder, InvoiceStatus} from '@/types';
+import { ApiError, SortOrder, InvoiceStatus, InvoiceStats} from '@/types';
  
 export const CreateInvoiceSchema = z.object({
   customerId: z
@@ -61,6 +62,12 @@ export const InvoiceController = {
     });
 
     return { status: 200, body: invoices };
+  },
+
+  async stats() {
+    const data: InvoiceStats = await getInvoiceStats();
+
+    return { status: 200, body: data };
   },
 
   async getById(id: string) {
