@@ -36,8 +36,7 @@ export interface Invoice {
   amount: number;
   date: Date;
   status: InvoiceStatus;
-  customer?: 
-  {
+  customer?: {
     name: string;
     email: string;
     imageUrl: string;
@@ -52,11 +51,33 @@ export interface FindAllInvoiceParams {
   page?: number;
   limit?: number;
   order?: SortOrder;
+  status?: InvoiceStatus;
+  customerId?: string;
+  dateFrom?: string;
+  dateTo?: string;
+};
+
+export interface InvoiceStats {
+  totalPendente: number;
+  totalPago: number;
+  countPendente: number;
+  countPago: number;
+  countTotal: number;
 };
 
 export interface Revenue {
   month: string;
   revenue: number;
+};
+
+export interface DashboardMetrics {
+  customerCount: number;
+  invoiceCount: number;
+  totalPendente: number;
+  totalPago: number;
+  countPendente: number;
+  countPago: number;
+  revenue: Revenue[];
 };
 
 export interface PaginationMeta {
