@@ -71,7 +71,8 @@ export interface Revenue {
   revenue: number;
 };
 
-export interface DashboardMetrics {
+export interface DashboardMetrics 
+{
   customerCount: number;
   invoiceCount: number;
   totalPendente: number;
